@@ -17,7 +17,8 @@ const Sidebar = () => {
       </ul>
 
       <div className="sign">
-        <p>By Sahil Jadhav &hearts;</p>
+        <p>All Rights Reserved by Nexa AI &copy; 2025</p>
+        <p>Developed by<i className="fa-solid" style={{width: "140px"}}>S a h i l &nbsp;J a d h a v</i></p>
       </div>
 
     </section>
