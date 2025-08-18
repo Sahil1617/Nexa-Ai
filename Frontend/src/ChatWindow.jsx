@@ -2,11 +2,11 @@ import React from 'react'
 import "./ChatWindow.css"
 import Chat from "./Chat.jsx"
 import { MyContext } from "./MyContext.jsx"
-import { useContext, useState } from "react"
+import { useContext, useState, useEffect } from "react"
 import {RingLoader} from "react-spinners"
 
 const ChatWindow = () => {
-  const {prompt, setPrompt, reply, setReply, currThreadId} = useContext(MyContext);
+  const {prompt, setPrompt, reply, setReply, currThreadId, prevChats, setPrevChats} = useContext(MyContext);
   const [loding, setLoding] = useState(false);
   const getReply = async () => {
     setLoding(true);
@@ -29,7 +29,23 @@ const ChatWindow = () => {
       console.log(error);
     }
     setLoding(false);
-  }
+  };
+
+  useEffect(() => {
+    if (prompt &&reply) {
+      setPrevChats (prevChats => [...prevChats, 
+        {
+          role: "user",
+          content: prompt, 
+        },
+        {
+          role: "assistant",
+          content: reply
+        }]);
+    }
+    setPrompt("");
+  }, [reply]);
+
   return (
     <div className='chatWindow'>
       <div className='navbar'>
