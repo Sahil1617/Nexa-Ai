@@ -75,7 +75,7 @@ const Sidebar = () => {
             <li key={idx} onClick={(e) => changeThread(thread.threadId)}
             className={thread.threadId === currThreadId ? "highlighted" : ""}
             >
-              {thread.title}&nbsp;<i class="fa-solid fa-trash" onClick={(e) => {
+              {thread.title}&nbsp;<i className="fa-solid fa-trash" onClick={(e) => {
                 e.stopPropagation();
                 deleteThread(thread.threadId);
                 }}></i>
@@ -83,7 +83,6 @@ const Sidebar = () => {
           ))  
         }
       </ul>
-
       <div className="sign">
         <p>All Rights Reserved by Nexa AI &copy; 2025</p>
         <p>Developed by<i className="fa-solid" style={{width: "140px"}}>S a h i l &nbsp;J a d h a v</i></p>
