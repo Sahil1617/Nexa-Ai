@@ -83,3 +83,23 @@ button:hover {
     font-size: 12px;
     border-top: 2px solid rgb(180, 180, 180);
 }
+
+.fa-trash {
+    opacity: 0;
+    position: absolute;
+    right: 0;
+}
+
+.history li:hover .fa-trash {
+    opacity: 1;
+    color: #fff;
+}
+
+.fa-trash:hover {
+    color: #f87171 !important;
+}
+
+.highlighted {
+    background-color: rgb(108, 207, 243);
+    border-radius: 10px;
+}
