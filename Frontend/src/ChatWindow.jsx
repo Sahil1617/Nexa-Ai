@@ -3,13 +3,14 @@ import "./ChatWindow.css"
 import Chat from "./Chat.jsx"
 import { MyContext } from "./MyContext.jsx"
 import { useContext, useState, useEffect } from "react"
-import {RingLoader} from "react-spinners"
+import {ScaleLoader} from "react-spinners"
 
 const ChatWindow = () => {
-  const {prompt, setPrompt, reply, setReply, currThreadId, prevChats, setPrevChats} = useContext(MyContext);
+  const {prompt, setPrompt, reply, setReply, currThreadId, prevChats, setPrevChats, setNewChat} = useContext(MyContext);
   const [loding, setLoding] = useState(false);
   const getReply = async () => {
     setLoding(true);
+    setNewChat(false);
     const options = {
       method : "POST",
       headers : {
@@ -57,7 +58,7 @@ const ChatWindow = () => {
     
       <Chat/>
 
-      <RingLoader color='#84c2fcff' loading={loding}></RingLoader>
+      <ScaleLoader color='#84c2fcff' loading={loding}></ScaleLoader>
 
       <div className='chatInput'>
         <div className='inputBox'>

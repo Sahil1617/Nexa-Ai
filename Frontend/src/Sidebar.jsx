@@ -1,19 +1,67 @@
 import "./Sidebar.css"
 import {useContext, useEffect} from "react";
 import { MyContext } from "./MyContext.jsx";
+import {v1 as uuidv1} from "uuid";
 
 const Sidebar = () => {
+  const {allThreads, setAllThreads, currThreadId, setCurrThreadId, setNewChat, setPrompt, setReply, setPrevChats} = useContext(MyContext);
+
+  const getAllThreads = async () => {
+    try {
+      const response = await fetch("http://localhost:8000/api/thread");
+      const res = await response.json();
+      
+      const filteredData = res.map(thread => ({threadId: thread.threadId, title: thread.title})); 
+      setAllThreads(filteredData);
+
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  useEffect(() => {
+    getAllThreads();
+  }, [currThreadId]) 
+
+
+  const createNewChat = () => {
+    setNewChat(true);
+    setPrompt("");
+    setReply(null);
+    setCurrThreadId(uuidv1());
+    setPrevChats([]);
+  } 
+
+  const changeThread = async (newThreadId) => {
+    setCurrThreadId(newThreadId);
+
+    try {
+      const response = await fetch(`http://localhost:8000/api/thread/${newThreadId}`);
+      const res = await response.json();
+      setPrevChats(res);
+      setNewChat(false);
+      setReply(null);
+
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   return (
     <section className="sidebar">
-      <button>
+      <button onClick={createNewChat}>
         <img src="src/assets/nexa.svg" alt="Nexa Ai" className="logo"/>
         <span><i className="fa-solid fa-pen-to-square"></i></span>
       </button>
 
       <ul className="history">
-        <li>history1</li>
-        <li>history1</li>
-        <li>history1</li>
+        {
+          allThreads?.map((thread, idx) => (
+            <li key={idx} onClick={(e) => changeThread(thread.threadId)}>
+              {thread.title}
+            </li>
+          ))  
+        }
       </ul>
 
       <div className="sign">
