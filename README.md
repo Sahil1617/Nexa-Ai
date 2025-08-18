@@ -1,51 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nexa AI - README</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f8f9fa;
-      color: #212529;
-      margin: 0;
-      padding: 20px;
-      line-height: 1.6;
-    }
-    h1, h2, h3 {
-      color: #0d6efd;
-    }
-    code, pre {
-      background: #212529;
-      color: #f8f9fa;
-      padding: 8px;
-      border-radius: 6px;
-      display: block;
-      overflow-x: auto;
-    }
-    .container {
-      max-width: 900px;
-      margin: auto;
-      background: #fff;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    ul {
-      padding-left: 20px;
-    }
-    footer {
-      text-align: center;
-      margin-top: 40px;
-      font-size: 14px;
-      color: #6c757d;
-    }
-  </style>
-</head>
 <body>
   <div class="container">
-    <h1>🤖 Nexa AI</h1>
+    <h1><img src="./Frontend/src/assets/nexa.svg"> Nexa AI</h1>
     <p>
       Nexa AI is an intelligent chat assistant powered by <b>OpenAI’s GPT-4o mini model</b>, built with a 
       <b>React.js frontend</b>, <b>Node.js backend</b>, and <b>MongoDB database</b>.  
