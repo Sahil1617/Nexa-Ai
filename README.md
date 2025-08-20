@@ -6,6 +6,7 @@
       <b>React.js frontend</b>, <b>Node.js backend</b>, and <b>MongoDB database</b>.  
       It provides users with a smooth, responsive, and modern chat interface while storing and managing conversations efficiently.
     </p>
+    <p><strong>Live Website:</strong> <a href="https://nexa-ai-1.netlify.app/" target="_blank">https://nexa-ai-1.netlify.app/</a></p>
     <h2>🚀 Features</h2>
     <ul>
       <li>AI-powered conversational assistant using GPT-4o mini</li>
