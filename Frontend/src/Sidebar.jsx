@@ -65,7 +65,7 @@ const Sidebar = () => {
   return (
     <section className="sidebar">
       <button onClick={createNewChat}>
-        <img src="src/assets/nexa.svg" alt="Nexa Ai" className="logo"/>
+        <img src="/nexa.svg" alt="Nexa Ai" className="logo" />
         <span><i className="fa-solid fa-pen-to-square"></i></span>
       </button>
 
