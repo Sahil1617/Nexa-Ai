@@ -24,7 +24,7 @@ const ChatWindow = () => {
       })
     };
     try {
-      const response = await fetch("http://localhost:8000/api/chat", options);
+      const response = await fetch("https://nexabackend-c1s7.onrender.com/api/chat", options);
       const res = await response.json();
       console.log(res);
       setReply(res.reply);

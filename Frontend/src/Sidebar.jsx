@@ -8,7 +8,7 @@ const Sidebar = () => {
 
   const getAllThreads = async () => {
     try {
-      const response = await fetch("http://localhost:8000/api/thread");
+      const response = await fetch("https://nexabackend-c1s7.onrender.com/api/thread");
       const res = await response.json();
       
       const filteredData = res.map(thread => ({threadId: thread.threadId, title: thread.title})); 
@@ -36,7 +36,7 @@ const Sidebar = () => {
     setCurrThreadId(newThreadId);
 
     try {
-      const response = await fetch(`http://localhost:8000/api/thread/${newThreadId}`);
+      const response = await fetch(`https://nexabackend-c1s7.onrender.com/api/thread/${newThreadId}`);
       const res = await response.json();
       setPrevChats(res);
       setNewChat(false);
@@ -49,7 +49,7 @@ const Sidebar = () => {
 
   const deleteThread = async (threadId) => {
     try {
-      const response = await fetch(`http://localhost:8000/api/thread/${threadId}`, {method: "DELETE"});
+      const response = await fetch(`https://nexabackend-c1s7.onrender.com/api/thread/${threadId}`, {method: "DELETE"});
       const res = await response.json();
       console.log(res);
       getAllThreads();
