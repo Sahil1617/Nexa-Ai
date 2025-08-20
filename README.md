@@ -1,6 +1,6 @@
 <body>
   <div class="container">
-    <h1><img src="./Frontend/src/assets/nexa.svg"  width="30" height="28"> Nexa AI</h1>
+    <h1><img src="./Frontend/public/nexa.svg"  width="30" height="28"> Nexa AI</h1>
     <p>
       Nexa AI is an intelligent chat assistant powered by <b>OpenAI’s GPT-4o mini model</b>, built with a 
       <b>React.js frontend</b>, <b>Node.js backend</b>, and <b>MongoDB database</b>.  
